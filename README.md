@@ -82,7 +82,7 @@ The pipeline successfully generates 6 unique, high-resolution (1024x1024) images
 
 | Angle 1: Dramatic Monsoon Scene | Angle 2: Vibrant Night Shot |
 | :---: | :---: |
-| *Expected: Dark storm clouds, rain-slicked road, wide-angle lens for scale.* | *Expected: Long exposure light trails, illuminated bridge, high-contrast city lights.* |
+| ![Dark storm clouds, rain-slicked road, wide-angle lens for scale.](Output/bandra_worli_sea_link/angle_1) | ![Long exposure light trails, illuminated bridge, high-contrast city lights.](Output/bandra_worli_sea_link/angle_2)) |
 
 ---
 
@@ -90,7 +90,7 @@ The pipeline successfully generates 6 unique, high-resolution (1024x1024) images
 
 | Angle 1: Bustling Street Market View | Angle 2: Serene Dusk View |
 | :---: | :---: |
-| *Expected: Car as sharp focal point, motion-blurred market crowd, street-level.* | *Expected: Rooftop cafe perspective, warmly lit Hawa Mahal against deep blue sky.* |
+| ![Car as sharp focal point, motion-blurred market crowd, street-level.](Output/hawa_mahal/angle_1) | ![Rooftop cafe perspective, warmly lit Hawa Mahal against deep blue sky.](Output/hawa_mahal/angle_2) |
 
 ---
 
@@ -98,10 +98,23 @@ The pipeline successfully generates 6 unique, high-resolution (1024x1024) images
 
 | Angle 1: Cascading Waterfall | Angle 2: Early Misty Morning |
 | :---: | :---: |
-| *Expected: Car parked by a waterfall, sunlight filtering through the canopy, adventurous feel.* | *Expected: Fog weaving through trees, soft diffused light, headlights cutting through mist.* |
+| ![Car parked by a waterfall, sunlight filtering through the canopy, adventurous feel.](Output/nagpur_rainforest/angle_1) | ![Fog weaving through trees, soft diffused light, headlights cutting through mist.](Output/nagpur_rainforest/angle_2) |
 
 ---
 
 ## 📦 Submission Package
 
 The final downloaded ZIP file contains:
+
+xuv700_output_new.zip
+└── xuv700_output_new/
+├── bandra_worli_sea_link/
+│   ├── angle_1.png
+│   └── angle_2.png
+├── hawa_mahal/
+│   ├── angle_1.png
+│   └── angle_2.png
+├── nagpur_rainforest/
+│   ├── angle_1.png
+│   └── angle_2.png
+└── metadata.json
