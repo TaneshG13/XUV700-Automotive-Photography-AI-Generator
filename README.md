@@ -114,13 +114,13 @@ The final downloaded ZIP file contains:
 
 xuv700_output_new.zip
 └── xuv700_output_new/
-├── bandra_worli_sea_link/
-│   ├── angle_1.png
-│   └── angle_2.png
-├── hawa_mahal/
-│   ├── angle_1.png
-│   └── angle_2.png
-├── nagpur_rainforest/
-│   ├── angle_1.png
-│   └── angle_2.png
-└── metadata.json
+    ├── bandra_worli_sea_link/
+    │   ├── angle_1.png
+    │   └── angle_2.png
+    ├── hawa_mahal/
+    │   ├── angle_1.png
+    │   └── angle_2.png
+    ├── nagpur_rainforest/
+    │   ├── angle_1.png
+    │   └── angle_2.png
+    └── metadata.json
