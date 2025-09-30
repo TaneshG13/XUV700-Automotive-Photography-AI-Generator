@@ -1,78 +1,107 @@
-# Realistic Car Compositing with Stable Diffusion & ControlNet
+# 📸 XUV700 Automotive Photography AI Generator
 
-This project demonstrates a professional workflow for creating photorealistic automotive advertisements using generative AI. The core task was to place a specific car model, the **Mahindra XUV700**, into nine distinct scenes across three Indian locations, ensuring maximum visual fidelity and brand accuracy.
+This project leverages the power of **Stable Diffusion XL (SDXL)** to create a collection of professional, high-quality, and hyperrealistic automotive photographs featuring a **white Mahindra XUV700 SUV** in diverse and iconic Indian locations.
 
-This repository documents the **No-LoRA Inpainting and Compositing** method used to achieve these results.
+The pipeline is designed to be executed within a Google Colab environment to utilize a free-tier GPU.
 
-![Showcase Banner](results/banner_placeholder.jpg) ## Table of Contents
-- [Project Goal](#project-goal)
-- [Rationale for Method](#rationale-for-method)
-- [The Final Workflow](#the-final-workflow)
-- [Technology Stack](#technology-stack)
-- [Setup & Installation](#setup--installation)
-- [Usage Guide](#usage-guide)
-- [Showcase of Results](#showcase-of-results)
-- [Future Improvements](#future-improvements)
-- [Acknowledgments](#acknowledgments)
+## ✨ Features
 
-## Project Goal
+* **Model:** Utilizes **Stable Diffusion XL 1.0** for state-of-the-art image quality.
+* **Locations:** Generates images across three distinct, pre-defined Indian backdrops:
+    * **Bandra-Worli Sea Link, Mumbai** (Monsoon and Night shots)
+    * **Hawa Mahal, Jaipur** (Market and Dusk shots)
+    * **Nagpur Rainforest** (Waterfall and Misty Morning shots)
+* **Optimization:** Includes memory-saving techniques like **`enable_model_cpu_offload()`** and **`enable_vae_slicing()`** for efficient GPU usage.
+* **Automated Workflow:** Handles setup, generation, saving, metadata tracking, and final packaging into a downloadable ZIP file.
 
-The primary objective was to generate nine photorealistic images of a **silver Mahindra XUV700** in three distinct locations:
-1.  **Mumbai:** The Bandra-Worli Sea Link
-2.  **Jaipur:** In front of the Hawa Mahal
-3.  **Nagpur Region:** A road in the Tadoba Forest
+---
 
-The key evaluation criteria were realism, consistency across the image set, and perfect accuracy to the source car model.
+## ⚙️ Prerequisites
 
-## Rationale for Method
+* **Google Colab Pro/Plus** (Recommended for faster execution and better GPU access, though a free-tier GPU works).
+* A **Hugging Face Account** and a **User Access Token** with **Write** permission to login via `notebook_login()`.
 
-A **No-LoRA Inpainting and Compositing** workflow was deliberately chosen over LoRA fine-tuning for two strategic reasons:
-1.  **Guaranteed Model Accuracy:** By using cutouts from the official reference photos, the car's brand identity—its precise shape, grille, and details—is 100% accurate in every image. This eliminates the risk of generative "hallucinations" or model inaccuracies.
-2.  **Demonstration of Compositing Skills:** This method showcases essential skills in digital compositing, lighting, and shadow work, which are critical for professional commercial imagery. It proves an ability to seamlessly blend real and AI-generated elements.
+---
 
-## The Final Workflow
+## 🛠️ Installation and Setup
 
-The project was executed using a methodical, multi-stage process that combines AI generation with digital art techniques.
+The included Colab notebook handles all installation steps automatically.
 
-1.  **Asset Preparation:**
-    * High-quality source images of the car were used to create transparent `.png` cutouts.
-    * These cutouts were then used to generate corresponding **Depth Maps** for use with ControlNet.
+1.  **Install Libraries:** Installs and upgrades `diffusers`, `transformers`, `accelerate`, and `huggingface_hub`.
+2.  **Restart Session:** Requires a runtime restart to correctly load the new library versions.
+3.  **Hugging Face Login:** Prompts the user to log in to Hugging Face to access the SDXL model weights.
 
-2.  **Background Generation:**
-    * The `txt2img` function was used with the `sd_xl_base_1.0.safetensors` model.
-    * **ControlNet (Depth Model)** guided the AI to generate a scene with perspective and space that perfectly matched the intended car's shape and angle.
+---
 
-3.  **Compositing:**
-    * The generated background and the corresponding car cutout were combined in an external image editor (e.g., Photoshop, GIMP).
+## 🚀 The Generation Pipeline
 
-4.  **Inpainting for Realism:**
-    * The composite image was taken into the `Inpaint` tab for a two-pass blending process to add realistic shadows and environmental lighting.
+The core logic is encapsulated in the `XUV700ImageGenerator` class, which follows a systematic sequence:
 
-## Technology Stack
+### 1. Initialization and Model Loading
 
-* **Core Framework:** [AUTOMATIC1111's Stable Diffusion Web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-* **Primary Model:** `sd_xl_base_1.0.safetensors`
-* **Key Extension:** `sd-webui-controlnet` by Mikubill
-* **ControlNet Models:** `sdxl_canny_mid.safetensors`, `sdxl_depth_mid.safetensors`
-* **Image Editor:** Any editor that supports layers and transparency (e.g., Adobe Photoshop, GIMP).
+The generator class initializes, creates the output directory structure (`xuv700_output_new/`), and loads the `stabilityai/stable-diffusion-xl-base-1.0` model.
 
-## Setup & Installation
+* **Device:** Automatically detects and uses **`cuda`** (GPU).
+* **Optimization:** **FP16** precision, CPU offload, and VAE slicing are enabled to manage the large model size.
 
-To replicate this environment:
+### 2. Prompt Configuration
 
-1.  Install the Automatic1111 Web UI.
-2.  Install the `sd-webui-controlnet` extension from the `Extensions` tab.
-3.  Download the `sd_xl_base_1.0.safetensors` checkpoint and place it in the `models/Stable-diffusion` folder.
-4.  Download the SDXL-compatible ControlNet models ('mid' versions of Canny and Depth) and place them in the `extensions/sd-webui-controlnet/models` folder.
-5.  Restart the Web UI.
+A detailed configuration dictionary (`prompt_config`) holds all the generation parameters. Each location has a common **`base`** prompt and two unique, descriptive **`angles`** to create a varied portfolio.
 
-## Usage Guide
+| Location | Base Prompt Snippet | Angles (Theme) |
+| :--- | :--- | :--- |
+| **Bandra-Worli Sea Link** | `...white Mahindra XUV700 SUV on the Bandra-Worli Sea Link...` | **Dramatic Monsoon** (Rain-slicked asphalt, storm clouds) **Vibrant Night Shot** (Long exposure, light trails) |
+| **Hawa Mahal** | `...white Mahindra XUV700 SUV in Jaipur, with the Hawa Mahal...` | **Bustling Street Market** (Motion blur, vibrant stalls) **Serene Dusk View** (Rooftop cafe perspective, warm lights) |
+| **Nagpur Rainforest** | `...white Mahindra XUV700 SUV in a lush Nagpur rainforest...` | **Cascading Waterfall** (Mist, filtered sunlight, water droplets) **Early Misty Morning** (Fog, diffused lighting, headlights on) |
 
-1.  **Prepare Assets:** Create your car `.png` cutouts and `.png` depth maps.
-2.  **Generate Background:** Use `txt2img` with a detailed prompt and the appropriate ControlNet depth map to generate a background scene.
-3.  **Composite:** Combine the background and the corresponding car cutout in an image editor.
-4.  **Inpaint:** Use the `Inpaint` tab to add shadows and lighting for the final touch.
+### 3. Image Generation
 
-### Example Prompt for Background Generation
-```prompt
-(masterpiece, best quality, ultra-realistic photograph), the road on the Bandra-Worli Sea Link in Mumbai with an empty space for a car, bright afternoon sun from the top-right creating soft shadows, shot on a Sony A7III with a 35mm lens, sharp focus
+The `generate_all_images()` method iterates through the 3 locations and 2 angles (6 images total).
+
+* **Settings:**
+    * **Steps:** 40
+    * **Guidance Scale:** 7.5
+    * **Resolution:** 1024x1024
+    * **Seeding:** Uses a base seed (`base_seed=101`) and increments it for each image to ensure unique, reproducible results.
+
+### 4. Output and Packaging
+
+* **Saving:** Each generated image is saved to its respective subdirectory (e.g., `xuv700_output_new/hawa_mahal/angle_1.png`).
+* **Metadata:** A `metadata.json` file is saved, containing the full prompt, seed, and file path for every generated image.
+* **Zipping & Download:** The final step compresses the entire `xuv700_output_new` directory into a **`xuv700_output_new.zip`** file and initiates the download in the browser.
+
+---
+
+## 🖼️ Expected Results
+
+The pipeline successfully generates 6 unique, high-resolution (1024x1024) images. Below are examples of the diverse styles generated by the prompts:
+
+---
+
+### **1. Bandra-Worli Sea Link (Mumbai)**
+
+| Angle 1: Dramatic Monsoon Scene | Angle 2: Vibrant Night Shot |
+| :---: | :---: |
+| *Expected: Dark storm clouds, rain-slicked road, wide-angle lens for scale.* | *Expected: Long exposure light trails, illuminated bridge, high-contrast city lights.* |
+
+---
+
+### **2. Hawa Mahal (Jaipur)**
+
+| Angle 1: Bustling Street Market View | Angle 2: Serene Dusk View |
+| :---: | :---: |
+| *Expected: Car as sharp focal point, motion-blurred market crowd, street-level.* | *Expected: Rooftop cafe perspective, warmly lit Hawa Mahal against deep blue sky.* |
+
+---
+
+### **3. Nagpur Rainforest**
+
+| Angle 1: Cascading Waterfall | Angle 2: Early Misty Morning |
+| :---: | :---: |
+| *Expected: Car parked by a waterfall, sunlight filtering through the canopy, adventurous feel.* | *Expected: Fog weaving through trees, soft diffused light, headlights cutting through mist.* |
+
+---
+
+## 📦 Submission Package
+
+The final downloaded ZIP file contains:
