@@ -112,7 +112,7 @@ The pipeline successfully generates 6 unique, high-resolution (1024x1024) images
 
 The final downloaded ZIP file contains:
 
-xuv700_output_new.zip
+<pre>xuv700_output_new.zip
 └── xuv700_output_new/
     ├── bandra_worli_sea_link/
     │   ├── angle_1.png
@@ -123,4 +123,4 @@ xuv700_output_new.zip
     ├── nagpur_rainforest/
     │   ├── angle_1.png
     │   └── angle_2.png
-    └── metadata.json
+    └── metadata.json<pre>
