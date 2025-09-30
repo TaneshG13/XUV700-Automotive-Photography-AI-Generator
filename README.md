@@ -82,7 +82,7 @@ The pipeline successfully generates 6 unique, high-resolution (1024x1024) images
 
 | Angle 1: Dramatic Monsoon Scene | Angle 2: Vibrant Night Shot |
 | :---: | :---: |
-| ![Dark storm clouds, rain-slicked road, wide-angle lens for scale.](Output/bandra_worli_sea_link/angle_1) | ![Long exposure light trails, illuminated bridge, high-contrast city lights.](Output/bandra_worli_sea_link/angle_2)) |
+| ![Dark storm clouds, rain-slicked road, wide-angle lens for scale.](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/bandra_worli_sea_link/angle_1) | ![Long exposure light trails, illuminated bridge, high-contrast city lights.](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/bandra_worli_sea_link/angle_2)) |
 
 ---
 
@@ -90,7 +90,7 @@ The pipeline successfully generates 6 unique, high-resolution (1024x1024) images
 
 | Angle 1: Bustling Street Market View | Angle 2: Serene Dusk View |
 | :---: | :---: |
-| ![Car as sharp focal point, motion-blurred market crowd, street-level.](Output/hawa_mahal/angle_1) | ![Rooftop cafe perspective, warmly lit Hawa Mahal against deep blue sky.](Output/hawa_mahal/angle_2) |
+| ![Car as sharp focal point, motion-blurred market crowd, street-level.](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/hawa_mahal/angle_1) | ![Rooftop cafe perspective, warmly lit Hawa Mahal against deep blue sky.](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/hawa_mahal/angle_2) |
 
 ---
 
@@ -98,7 +98,7 @@ The pipeline successfully generates 6 unique, high-resolution (1024x1024) images
 
 | Angle 1: Cascading Waterfall | Angle 2: Early Misty Morning |
 | :---: | :---: |
-| ![Car parked by a waterfall, sunlight filtering through the canopy, adventurous feel.](Output/nagpur_rainforest/angle_1) | ![Fog weaving through trees, soft diffused light, headlights cutting through mist.](Output/nagpur_rainforest/angle_2) |
+| ![Car parked by a waterfall, sunlight filtering through the canopy, adventurous feel.](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/nagpur_rainforest/angle_1) | ![Fog weaving through trees, soft diffused light, headlights cutting through mist.](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/nagpur_rainforest/angle_2) |
 
 ---
 
