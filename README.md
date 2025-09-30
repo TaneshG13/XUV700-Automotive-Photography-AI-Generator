@@ -88,7 +88,7 @@ The pipeline successfully generates 6 unique, high-resolution (1024x1024) images
 
 | Angle 1: Dramatic Monsoon Scene | Angle 2: Vibrant Night Shot |
 | :---: | :---: |
-| ![XUV700 Monsoon BWSL](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/bandra_worli_sea_link/angle_1.png) | ![XUV700 Night BWSL](https://raw.githubusercontent.com/TaneshG13/Output/main/xuv700_output_new/bandra_worli_sea_link/angle_2.png) |
+| ![XUV700 Monsoon BWSL](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/bandra_worli_sea_link/angle_1.png) | ![XUV700 Night BWSL](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/bandra_worli_sea_link/angle_2.png) |
 
 ---
 
@@ -96,7 +96,7 @@ The pipeline successfully generates 6 unique, high-resolution (1024x1024) images
 
 | Angle 1: Bustling Street Market View | Angle 2: Serene Dusk View |
 | :---: | :---: |
-| ![XUV700 Market Hawa Mahal](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/angle_1.png) | ![XUV700 Dusk Hawa Mahal](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/hawa_mahal/angle_2.png) |
+| ![XUV700 Market Hawa Mahal](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/hawa_mahal/angle_1.png) | ![XUV700 Dusk Hawa Mahal](https://raw.githubusercontent.com/TaneshG13/XUV700-Automotive-Photography-AI-Generator/main/Output/hawa_mahal/angle_2.png) |
 
 ---
 
