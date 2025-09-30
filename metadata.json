@@ -1,0 +1,50 @@
+[
+  {
+    "image_number": 1,
+    "location": "Bandra Worli Sea Link",
+    "angle": 1,
+    "filename": "xuv700_output_new/bandra_worli_sea_link/angle_1.png",
+    "prompt": "professional automotive photography of a white Mahindra XUV700 SUV on the Bandra-Worli Sea Link bridge in Mumbai, dramatic monsoon scene, dark storm clouds gathering, rain-slicked asphalt reflecting t...",
+    "seed": 102
+  },
+  {
+    "image_number": 2,
+    "location": "Bandra Worli Sea Link",
+    "angle": 2,
+    "filename": "xuv700_output_new/bandra_worli_sea_link/angle_2.png",
+    "prompt": "professional automotive photography of a white Mahindra XUV700 SUV on the Bandra-Worli Sea Link bridge in Mumbai, vibrant night shot, long exposure with light trails from other vehicles, the bridge il...",
+    "seed": 103
+  },
+  {
+    "image_number": 3,
+    "location": "Hawa Mahal",
+    "angle": 1,
+    "filename": "xuv700_output_new/hawa_mahal/angle_1.png",
+    "prompt": "professional automotive photography of a white Mahindra XUV700 SUV in Jaipur, with the Hawa Mahal palace in the background, view from a bustling street market, with colorful stalls and people in motio...",
+    "seed": 104
+  },
+  {
+    "image_number": 4,
+    "location": "Hawa Mahal",
+    "angle": 2,
+    "filename": "xuv700_output_new/hawa_mahal/angle_2.png",
+    "prompt": "professional automotive photography of a white Mahindra XUV700 SUV in Jaipur, with the Hawa Mahal palace in the background, serene dusk view from a rooftop cafe, the car is parked below, the palace is...",
+    "seed": 105
+  },
+  {
+    "image_number": 5,
+    "location": "Nagpur Rainforest",
+    "angle": 1,
+    "filename": "xuv700_output_new/nagpur_rainforest/angle_1.png",
+    "prompt": "professional automotive photography of a white Mahindra XUV700 SUV in a lush Nagpur rainforest, surrounded by dense, wet tropical vegetation, parked beside a cascading waterfall, water spray creating ...",
+    "seed": 106
+  },
+  {
+    "image_number": 6,
+    "location": "Nagpur Rainforest",
+    "angle": 2,
+    "filename": "xuv700_output_new/nagpur_rainforest/angle_2.png",
+    "prompt": "professional automotive photography of a white Mahindra XUV700 SUV in a lush Nagpur rainforest, surrounded by dense, wet tropical vegetation, early misty morning on a remote forest path, fog weaving t...",
+    "seed": 107
+  }
+]
